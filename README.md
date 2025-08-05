@@ -13,6 +13,11 @@
     
 -   Crea la regla de firewall para permitir HTTP (puerto 80) solo a instancias con esa etiqueta.
 
+- nano create-web-vms.sh
+- chmod +x create-web-vms.sh
+- ./create-web-vms.sh
+- curl http://[EXTERNAL_IP]
+
 ```bash
     #!/bin/bash
     
@@ -49,45 +54,30 @@
     # 4) Listar instancias para verificar
     gcloud compute instances list --zones=${ZONE}
 ```
-```bash
-Other: Crear web1 desde la Consola web
-Entra en la Cloud Console → Compute Engine → VM instances.
 
-Haz clic en Create Instance.
-
+### Other: Crear web1 desde la Consola web
+- Entra en la Cloud Console → Compute Engine → VM instances.
+- Haz clic en Create Instance.
 Rellena exactamente estos valores:
-
 Name: web1
-
 Region: europe-west1
-
 Zone: europe-west1-b
-
 Machine configuration → Series: E2 → Machine type: e2-small
-
 Boot disk → Public images → Debian → Version: Debian 11 (bullseye)
-
 Firewall → Marca Allow HTTP traffic (o, si no sale, ve a Management, security, disks... → Networking → añade la etiqueta network-lb-tag)
-
 En Management, security, disks... → Metadata → Startup script, pega:
 
-bash
-Copiar
-Editar
-#!/bin/bash
-apt-get update
-apt-get install -y apache2
-systemctl restart apache2
-echo "<h3>Web Server: web1</h3>" | tee /var/www/html/index.html
+    ```bash
+    Copiar
+    Editar
+    #!/bin/bash
+    apt-get update
+    apt-get install -y apache2
+    systemctl restart apache2
+    echo "<h3>Web Server: web1</h3>" | tee /var/www/html/index.html
+    ```
 Haz Create.
-
-Espera unos segundos y refresca el lab: Check my progress.
-```
-
-- nano create-web-vms.sh
-- chmod +x create-web-vms.sh
-- ./create-web-vms.sh
-- curl http://[EXTERNAL_IP]
+Espera unos segundos.
 
 # Implementing Cloud Load Balancing for Compute Engine
 
