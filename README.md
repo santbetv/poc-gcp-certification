@@ -179,3 +179,16 @@ Espera unos segundos.
       --ports=80
 ```
 
+- Probar
+```
+    gcloud compute instance-templates describe $TEMPLATE
+    gcloud compute instance-groups managed describe $MIG --zone=$ZONE
+    gcloud compute firewall-rules list --filter="name=$FW_RULE"
+    gcloud compute addresses describe $STATIC_IP --global
+    gcloud compute health-checks describe $HC
+    gcloud compute backend-services describe $BACKEND_SERVICE --global
+    gcloud compute url-maps describe $URL_MAP
+    gcloud compute target-http-proxies describe $HTTP_PROXY
+    gcloud compute forwarding-rules list --global --filter="name=$FW_FORWARD"
+```
+
