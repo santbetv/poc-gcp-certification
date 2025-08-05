@@ -13,7 +13,7 @@
     
 -   Crea la regla de firewall para permitir HTTP (puerto 80) solo a instancias con esa etiqueta.
 
-
+```bash
     #!/bin/bash
     
     # 1) Variables comunes
@@ -48,7 +48,7 @@
     
     # 4) Listar instancias para verificar
     gcloud compute instances list --zones=${ZONE}
-
+```
 - nano create-web-vms.sh
 - chmod +x create-web-vms.sh
 - ./create-web-vms.sh
