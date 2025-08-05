@@ -58,7 +58,7 @@
 ### Other: Crear web1 desde la Consola web
 - Entra en la Cloud Console → Compute Engine → VM instances.
 - Haz clic en Create Instance.
-Rellena exactamente estos valores:
+    - Rellena exactamente estos valores:
 Name: web1
 Region: europe-west1
 Zone: europe-west1-b
