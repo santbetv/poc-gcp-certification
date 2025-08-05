@@ -59,13 +59,13 @@
 - Entra en la Cloud Console → Compute Engine → VM instances.
 - Haz clic en Create Instance.
     - Rellena exactamente estos valores:
-Name: web1
-Region: europe-west1
-Zone: europe-west1-b
-Machine configuration → Series: E2 → Machine type: e2-small
-Boot disk → Public images → Debian → Version: Debian 11 (bullseye)
-Firewall → Marca Allow HTTP traffic (o, si no sale, ve a Management, security, disks... → Networking → añade la etiqueta network-lb-tag)
-En Management, security, disks... → Metadata → Startup script, pega:
+    - Name: web1
+    - Region: europe-west1
+    - Zone: europe-west1-b
+    - Machine configuration → Series: E2 → Machine type: e2-small
+    - Boot disk → Public images → Debian → Version: Debian 11 (bullseye)
+    - Firewall → Marca Allow HTTP traffic (o, si no sale, ve a Management, security, disks... → Networking → añade la etiqueta network-lb-tag)
+    - En Management, security, disks... → Metadata → Startup script, pega:
 
     ```bash
     Copiar
